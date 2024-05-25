@@ -5,12 +5,12 @@ chat_id = 506238275  # Ваш chat ID, не меняйте название пе
 
 
 def solution(x: np.array, y: np.array) -> bool:
-    x_bins, bins = np.histogram(x, bins=10)
+    x_bins, bins = np.histogram(x, bins=20)
     y_bins, _ = np.histogram(y, bins)
     phi = np.sum((y_bins - x_bins) ** 2 / x_bins)
     df = len(x_bins) - 1
     # chi2_th = chi2.ppf(1 - 0.1, df)
-    chi2_th = 14.683656573259839
+    chi2_th = 27.203571029356826
     return phi > chi2_th
 
 
